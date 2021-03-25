@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify, Response
-import amadeus
+import amadeus.amadeus
 app = Flask(__name__)
 
 amadeus = amadeus.Client(
