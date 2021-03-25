@@ -33,4 +33,11 @@ def i4():
 
 @app.route("/json-test")
 def jsontest():
+    print((amadeus.reference_data.urls.checkin_links.get()).data)
     return (amadeus.reference_data.urls.checkin_links.get(airlineCode='BA')).result
+
+@app.route("/query", methods=["POST"])
+def query():
+    leavingFrom = request.form["leavingFrom"]
+    goingTo = request.form["goingTo"]
+    return goingTo

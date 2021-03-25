@@ -63,7 +63,7 @@
 		<article class="col1">
 			<div class="pad_1">
 				<h2>Your Flight Planner</h2>
-				<form id="form_1" action="" method="post">
+				<form id="form_1" action="{{ url_for('query') }}" method="post">
 					<div class="wrapper pad_bot1">
 						<div class="radio marg_right1">
 							<input type="radio" name="name1">Round Trip<br>
@@ -76,11 +76,11 @@
 					</div>
 					<div class="wrapper">
 						Leaving From:
-						<div class="bg"><input type="text" class="input input1" value="Enter City or Airport Code" onblur="if(this.value=='') this.value='Enter City or Airport Code'" onFocus="if(this.value =='Enter City or Airport Code' ) this.value=''"></div>
+						<div class="bg"><input type="text" class="input input1" id="leavingFrom" name="leavingFrom" value="Enter City or Airport Code" onblur="if(this.value=='') this.value='Enter City or Airport Code'" onFocus="if(this.value =='Enter City or Airport Code' ) this.value=''"></div>
 					</div>
 					<div class="wrapper">
 						Going To:
-						<div class="bg"><input type="text" class="input input1" value="Enter City or Airport Code" onblur="if(this.value=='') this.value='Enter City or Airport Code'" onFocus="if(this.value =='Enter City or Airport Code' ) this.value=''"></div>
+						<div class="bg"><input type="text" class="input input1" id="goingTo" name="goingTo" value="Enter City or Airport Code" onblur="if(this.value=='') this.value='Enter City or Airport Code'" onFocus="if(this.value =='Enter City or Airport Code' ) this.value=''"></div>
 					</div>
 					<div class="wrapper">
 						Departure Date and Time:
@@ -99,7 +99,7 @@
 					<div class="wrapper">
 						<p>Passenger(s):</p>
 						<div class="bg left"><input type="text" class="input input2" value="# passengers" onblur="if(this.value=='') this.value='# passengers'" onFocus="if(this.value =='# passengers' ) this.value=''"></div>
-						<a href="#" class="button2" onClick="document.getElementById('form_1').submit()">go!</a>
+						<a class="button2" onClick="document.getElementById('form_1').submit()">go!</a>
 					</div>
 				</form>
 				<h2>Recent News</h2>
